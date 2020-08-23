@@ -1,14 +1,17 @@
 name: 'Issuekit Action'
 description: 'A simple action that helps you comment on issues'
 inputs:
-  token:  # id of input
+  token: 
     description: 'GitHub API Authentication Token'
-    required: true
-  comment: 
-    description: 'The comment that should be posted'
     required: true
   issue: 
     description: 'The issue number to post on. Required if not triggered through a issues webhook event'
+    required: false
+  comment: 
+    description: 'The comment that should be posted'
+    required: true
+  label: 
+    description: 'Label(s) to add'
     required: false
 runs:
   using: 'node12'
