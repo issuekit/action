@@ -10,7 +10,7 @@ const octokit = new Octokit({ auth: token })
 const payload = actionsGithub.context.payload
 const label = actionsCore.getInput('label').split(',')
 const issue_number = actionsCore.getInput('issue') ? actionsCore.getInput('issue') : payload.issue.number.toString()
-console.log(5)
+console.log(6)
 if (comment) {
   // async () => {
   //   await octokit.request(`POST /repos/${full_repo}/issues/${issue_number}/comments`, {
@@ -22,10 +22,10 @@ if (comment) {
   // }
 }
 // if (label) {
-//   octokit.request(`POST /repos/${full_repo}/issues/${issue_number}/labels`, {
-//     owner: repo[0],
-//     repo: repo[1],
-//     issue_number: parseInt(issue_number),
-//     labels: label
-//   })
+  octokit.request(`POST /repos/${full_repo}/issues/${issue_number}/labels`, {
+    owner: repo[0],
+    repo: repo[1],
+    issue_number: parseInt(issue_number),
+    labels: label
+  })
 // }
