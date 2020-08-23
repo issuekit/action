@@ -22,12 +22,10 @@ if (comment) {
   // }
 }
 // if (label) {
-  octokit.request(`POST /repos/{owner}/{repo}/issues/{issue_number}/labels`, {
+  octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
     owner: repo[0],
     repo: repo[1],
     issue_number: parseInt(issue_number),
-    labels: [
-      'enhancement'
-    ]
+    labels: label
   })
 // }
