@@ -7,11 +7,18 @@ inputs:
   issue: 
     description: 'The issue number to post on. Required if not triggered through a issues webhook event'
     required: false
+  issueOverridesWebhook:
+    description: 'Whether or not the issue number given should override the one given by the webhook (Defaults to true)'
+    required: false
+    default: true
   comment: 
     description: 'The comment that should be posted'
-    required: true
+    required: false
+  assign:
+    desctiption: 'Github usernames to assign (comma separated if multiple)'
+    required: false
   label: 
-    description: 'Label(s) to add'
+    description: 'Label(s) to add (comma separated if multiple)'
     required: false
 runs:
   using: 'node12'

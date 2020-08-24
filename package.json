@@ -2,9 +2,9 @@
   "name": "issuekit-action",
   "version": "0.0.0",
   "description": "A simple action that helps you comment on issues",
-  "main": "main.js",
+  "main": "out/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc -m -o out build main.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
     "@octokit/request": "^5.4.7"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "~0.23.0"
   }
 }
