@@ -19,7 +19,7 @@ if (comment) {
     repo: repo[1],
     issue_number: issue_number,
     body: comment
-  }).catch(err)
+  })
 }
 if (label) {
   request('POST /repos/:owner/:repo/issues/:issue_number/labels', {
