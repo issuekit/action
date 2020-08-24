@@ -20,6 +20,6 @@
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
-    "@octokit/core": "^3.1.2"
+    "@octokit/request": "^5.4.7"
   }
 }

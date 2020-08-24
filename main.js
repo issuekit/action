@@ -1,15 +1,14 @@
 'use strict'
-const actionsCore = require('@actions/core')
-const actionsGithub = require('@actions/github')
-const { Octokit } = require('@octokit/core')
-const token = actionsCore.getInput('token')
+const core = require('@actions/core')
+const github = require('@actions/github')
+const { request } = require('@octokit/request')
+const token = core.getInput('token')
 const full_repo = process.env.GITHUB_REPOSITORY
 const repo = full_repo.split('/')
-const comment = actionsCore.getInput('comment')
-const octokit = new Octokit({ auth: token })
-const payload = actionsGithub.context.payload
-const label = actionsCore.getInput('label').split(',')
-const issue_number = actionsCore.getInput('issue') ? actionsCore.getInput('issue') : payload.issue.number.toString()
+const comment = core.getInput('comment')
+const payload = github.context.payload
+const label = core.getInput('label').split(',')
+const issue_number = core.getInput('issue') ? core.getInput('issue') : payload.issue.number.toString()
 console.log(6)
 if (comment) {
   // async () => {
@@ -22,7 +21,10 @@ if (comment) {
   // }
 }
 // if (label) {
-  octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
+  request('POST /repos/:owner/:repo/issues/:issue_number/labels', {
+    headers: {
+      authorization: 'token ' + token,
+    },
     owner: repo[0],
     repo: repo[1],
     issue_number: parseInt(issue_number),
