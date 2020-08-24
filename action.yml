@@ -20,6 +20,9 @@ inputs:
   label: 
     description: 'Label(s) to add (comma separated if multiple)'
     required: false
+branding:
+  icon: message-square
+  color: green
 runs:
   using: 'node12'
   main: 'main.js'
