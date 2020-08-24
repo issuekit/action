@@ -4,7 +4,10 @@
   "description": "A simple action that helps you comment on issues",
   "main": "out/index.js",
   "scripts": {
-    "build": "ncc -m -o out build main.js"
+    "build": "ncc -m -o out build main.js",
+    "ncc": "ncc",
+    "eslint": "eslint",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,18 @@
     "@octokit/request": "^5.4.7"
   },
   "devDependencies": {
-    "@vercel/ncc": "~0.23.0"
+    "@vercel/ncc": "~0.23.0",
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && yarn lint"
+    }
   }
 }
