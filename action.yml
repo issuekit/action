@@ -1,5 +1,6 @@
 name: 'Issuekit Action'
 description: 'A simple action that helps you comment on issues'
+main: 'out/index.js'
 inputs:
   token: 
     description: 'GitHub API Authentication Token'

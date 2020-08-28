@@ -33,7 +33,7 @@ jobs:
 
 ### Welcome new issues
 ```yml
-    name: issuekit
+name: issuekit
 on:
   issue:
     types: [ opened ]
