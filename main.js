@@ -1,6 +1,6 @@
 'use strict'
 const core = require('@actions/core')
-const issuekit = require('issuekit')
+const issuekit = require('@issuekit/core')
 const token = core.getInput('token')
 const repo = process.env.GITHUB_REPOSITORY
 const payload = require('@actions/github').context.payload
