@@ -1,6 +1,6 @@
 {
   "name": "issuekit-action",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple action that helps you comment on issues",
   "main": "out/index.js",
   "scripts": {
