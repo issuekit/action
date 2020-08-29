@@ -5,8 +5,6 @@
   "main": "out/index.js",
   "scripts": {
     "build": "ncc -m -o out build main.js",
-    "ncc": "ncc",
-    "eslint": "eslint",
     "lint": "eslint ."
   },
   "repository": {
@@ -23,7 +21,7 @@
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@actions/github": "^4.0.0",
-    "@octokit/request": "^5.4.7"
+    "@issuekit/core": "^0.1.0"
   },
   "devDependencies": {
     "@vercel/ncc": "~0.24.0",

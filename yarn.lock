@@ -45,6 +45,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@issuekit/core@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@issuekit/core/-/core-0.1.0.tgz#aad013c2fcfef3a1c37f5466be1a73223658c6ee"
+  integrity sha512-l/gnVAsA33Ddb2GUdyaDz8i79y564cHdoCA7m2KbJpFTbZ9Cpv9JyHt1yUMrmB+pbPI5c+monuaADroJIcbGWg==
+
 "@octokit/auth-token@^2.4.0":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-2.4.2.tgz#10d0ae979b100fa6b72fa0e8e63e27e6d0dbff8a"
