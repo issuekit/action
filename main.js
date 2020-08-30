@@ -18,9 +18,9 @@ const label = core.getInput('label').split(',')
 if (comment) {
   issuekit.addComment(comment)
 }
-if (assign.length) {
+if (assign[0]) {
   issuekit.addAssignees(assign)
 }
-if (label.length) {
+if (label[0]) {
   issuekit.addLabels(label)
 }
