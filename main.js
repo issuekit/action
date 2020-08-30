@@ -1,37 +1,26 @@
 'use strict'
 const core = require('@actions/core')
-const issuekit = require('@issuekit/core')
-const token = core.getInput('token')
-const repo = process.env.GITHUB_REPOSITORY
-const payload = require('@actions/github').context.payload
+const payloadIssue = require('@actions/github').context.payload.issue.number
+const inputIssue = core.getInput('issue')
+const { Issuekit } = require('@issuekit/core')
+const issuekit = new Issuekit({
+  auth: core.getInput('token'),
+  repo: process.env.GITHUB_REPOSITORY,
+  issue: parseInt(
+    core.getInput('issueOverridesWebhook')
+      ? inputIssue || payloadIssue
+      : payloadIssue || inputIssue
+  )
+})
 const comment = core.getInput('comment')
-const assign = core.getInput('assign')
+const assign = core.getInput('assign').split(',')
 const label = core.getInput('label').split(',')
-const issue = parseInt(core.getInput('issueOverridesWebhook')
-  ? (core.getInput('issue') ? core.getInput('issue') : payload.issue.number)
-  : (payload.issue.number ? payload.issue.number : core.getInput('issue')))
-
 if (comment) {
-  issuekit.comment.add({
-    token: token,
-    issue: issue,
-    repo: repo,
-    body: comment
-  })
+  issuekit.addComment(comment)
 }
-if (assign) {
-  issuekit.assignees.add({
-    token: token,
-    issue: issue,
-    repo: repo,
-    assignees: assign
-  })
+if (assign[0]) {
+  issuekit.addAssignees(assign)
 }
-if (label) {
-  issuekit.labels.add({
-    token: token,
-    issue: issue,
-    repo: repo,
-    labels: label
-  })
+if (label[0]) {
+  issuekit.addLabels(label)
 }
