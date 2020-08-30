@@ -17,10 +17,13 @@ const assign = core.getInput('assign').split(',')
 const label = core.getInput('label').split(',')
 if (comment) {
   issuekit.addComment(comment)
+  console.log('Comment')
 }
 if (assign) {
   issuekit.addAssignees(assign)
+  console.log('Assign')
 }
 if (label) {
   issuekit.addLabels(label)
+  console.log('Label')
 }
