@@ -22,5 +22,5 @@ if (assign) {
   issuekit.addAssignees(assign)
 }
 if (label) {
-  issuekit.addLabel(label)
+  issuekit.addLabels(label)
 }
