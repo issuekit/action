@@ -17,13 +17,10 @@ const assign = core.getInput('assign').split(',')
 const label = core.getInput('label').split(',')
 if (comment) {
   issuekit.addComment(comment)
-  console.log('comment ' + comment + '\ntypeof comment' + typeof comment)
 }
-if (assign) {
+if (assign.length) {
   issuekit.addAssignees(assign)
-  console.log('assign ' + assign + '\ntypeof assign' + typeof assign)
 }
-if (label) {
+if (label.length) {
   issuekit.addLabels(label)
-  console.log('label ' + label + '\ntypeof label' + typeof label)
 }
